@@ -1,16 +1,13 @@
 int servoPin = 5;
-int buttonPin = 14;
+int buttonPin = 14; // mueve el servo hacia un lado
 
-int buttonPin2 = 17;
+int buttonPin2 = 17; // mueve el servo hacia el otro lado
 
 void setup()
 {
   Serial.begin(115200);
-  Serial.println("poor man's servo sweep");
+  Serial.println("Como manejar un servo SG90 sin librerias");
 
-  //turn off L13
-  //pinMode(LED_BUILTIN, OUTPUT);
-  //digitalWrite(LED_BUILTIN, LOW);
 
   pinMode(servoPin, OUTPUT);
   digitalWrite(servoPin, LOW);
@@ -22,40 +19,40 @@ void setup()
 
 void loop()
 {
-  Serial.print("one side...");
+  Serial.print("hacia un lado");
   while (digitalRead(buttonPin) == HIGH)
   {
     digitalWrite(servoPin, HIGH);
-    delayMicroseconds(1900);    //position
+    delayMicroseconds(1900);    //posicion
     digitalWrite(servoPin, LOW);
-    delayMicroseconds(18100);   //balance of 20000 cycle
+    delayMicroseconds(18100);   // frecuencia servo
   }
 
-  Serial.println("other side");
-  while (!digitalRead(buttonPin) == HIGH)  //oops... that said HIGH by mistake, no wait, HIGH is correct, I forgot I had the ! there for not
+  Serial.println("hacia el centro");
+  while (!digitalRead(buttonPin) == HIGH)  
   {
     digitalWrite(servoPin, HIGH);
-    delayMicroseconds(100);    //position
+    delayMicroseconds(100);    
     digitalWrite(servoPin, LOW);
-    delayMicroseconds(18900);   //balance of 20000 cycle
+    delayMicroseconds(18900);   
   }
 
-  Serial.print("one side2...");
+  Serial.print("al otro lado");
   while (digitalRead(buttonPin2) == HIGH)
   {
     digitalWrite(servoPin, HIGH);
-    delayMicroseconds(900);    //position
+    delayMicroseconds(900);     
     digitalWrite(servoPin, LOW);
-    delayMicroseconds(18100);   //balance of 20000 cycle
+    delayMicroseconds(18100);    
   }
 
-  Serial.println("other side2");
-  while (!digitalRead(buttonPin2) == HIGH)  //oops... that said HIGH by mistake, no wait, HIGH is correct, I forgot I had the ! there for not
+  Serial.println("al centro");
+  while (!digitalRead(buttonPin2) == HIGH)  
   {
     digitalWrite(servoPin, HIGH);
-    delayMicroseconds(100);    //position
+    delayMicroseconds(100);     
     digitalWrite(servoPin, LOW);
-    delayMicroseconds(18900);   //balance of 20000 cycle
+    delayMicroseconds(18900);   
   }
 
 
