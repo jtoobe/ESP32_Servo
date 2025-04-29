@@ -1,10 +1,12 @@
+// Para mover un servo con una placa ESP8266
+
 #include <Servo.h>
 
 Servo servo;
 
 void setup() {
 
-servo.attach(2); //D4
+servo.attach(2); //pin D4 del ESP8266
 
 servo.write(0);
 
