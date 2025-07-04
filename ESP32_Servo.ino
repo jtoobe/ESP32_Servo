@@ -3,6 +3,10 @@ Servo miServo;  // Creo un objeto servo para controlarlo
 int pos = 0;    // variable que guarda la posicion
 
 void setup() {
+
+  // cable rojo positivo 5v - cable marron GND
+
+  // Pin de señal del servo (SG90 cable naranja)
   miServo.attach(26);  // Defino en que pin va conectado el servo
 }
 
