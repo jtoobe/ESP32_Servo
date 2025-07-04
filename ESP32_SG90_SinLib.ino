@@ -1,6 +1,9 @@
-int servoPin = 5;
-int buttonPin = 14; // mueve el servo hacia un lado
+// cable rojo positivo 5v - cable marron GND
 
+int servoPin = 5; // Pin de señal del servo (SG90 cable naranja)
+
+
+int buttonPin = 14; // mueve el servo hacia un lado
 int buttonPin2 = 17; // mueve el servo hacia el otro lado
 
 void setup()
