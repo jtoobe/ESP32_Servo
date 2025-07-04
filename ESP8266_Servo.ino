@@ -6,6 +6,10 @@ Servo servo;
 
 void setup() {
 
+  // cable rojo positivo 5v - cable marron GND
+
+  // Pin de señal del servo (SG90 cable naranja)
+
 servo.attach(2); //pin D4 del ESP8266
 
 servo.write(0);
